@@ -1,7 +1,8 @@
-import { useState } from "react";
+import  { useState } from "react";
 import generateRandomJSON from "./generateRandomJSON";
 import "./App.css";
-import Card from "./card";
+import CollapseArrow from "./CollapseArrow";
+import JsonRenderer from "./JsonRenderer";
 
 function App() {
   const [jsonData, setJsonData] = useState([]);
@@ -27,7 +28,11 @@ function App() {
         {jsonData.length > 0 && (
           <>
             {jsonData.map((dict, index) => (
-              <Card key={index} jsonData={dict} />
+              <div key={index}>
+                <CollapseArrow fallback={"{...}"}>
+                  <JsonRenderer json={dict} />
+                </CollapseArrow>
+              </div>
             ))}
           </>
         )}
