@@ -1,8 +1,13 @@
 # React + Vite
+Hi there , this is the repository for the frontend task , It used React for frontend to make random JSON data and render them on screen to visualize the data in Tree structured format .
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-- Steps to run :
 
-Currently, two official plugins are available:
+             --npm install
+             
+             --npm run dev 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+
+![image](https://github.com/Gobind557/devSpace/assets/72307219/f6ea3f73-971c-48af-a6fe-49fe2e39356c)
