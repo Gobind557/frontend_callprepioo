@@ -1,12 +1,16 @@
-import  { useState } from "react";
-import generateRandomJSON from "./generateRandomJSON";
-import "./App.css";
-import CollapseArrow from "./CollapseArrow";
-import JsonRenderer from "./JsonRenderer";
+import { useState, useEffect } from "react";
+import JsonRenderer from "./components/JsonRenderer";
+import generateRandomJSON from "./utils/generateRandomJSON";
 
 function App() {
   const [jsonData, setJsonData] = useState([]);
 
+  useEffect(() => {
+    // Initially sets the data to a random value
+    setJsonData(generateRandomJSON());
+  }, []);
+
+  // User initiated request
   const generateJSON = () => {
     const newJSON = generateRandomJSON();
     setJsonData(newJSON);
@@ -20,22 +24,22 @@ function App() {
         readOnly
         rows={10}
       />
-      <button className="generate-button" onClick={generateJSON}>
-        Generate New JSON
-      </button>
+
+      <div className="button-wrapper">
+        <button className="generate-button" onClick={generateJSON}>
+          Generate New JSON
+        </button>
+      </div>
 
       <div className="cards-container">
-        {jsonData.length > 0 && (
-          <>
-            {jsonData.map((dict, index) => (
-              <div key={index}>
-                <CollapseArrow fallback={"{...}"}>
-                  <JsonRenderer json={dict} />
-                </CollapseArrow>
-              </div>
-            ))}
-          </>
-        )}
+        {jsonData.length > 0 &&
+          jsonData.map((data) => (
+            <>
+              <pre>
+                <JsonRenderer json={data} />
+              </pre>
+            </>
+          ))}
       </div>
     </div>
   );

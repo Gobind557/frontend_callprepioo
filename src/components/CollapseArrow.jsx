@@ -1,5 +1,4 @@
 import  { useState } from "react";
-import PropTypes from "prop-types";
 // Assuming these symbols are defined elsewhere
 const DOWN_ARROW = "▼";
 const RIGHT_ARROW = "▶";
@@ -16,13 +15,5 @@ function CollapseArrow({ children, fallback }) {
     </>
   );
 }
-CollapseArrow.propTypes = {
-  children: PropTypes.node.isRequired,
-  // ...other props
-};
-CollapseArrow.propTypes = {
-  fallback: PropTypes.node.isRequired,
-  // ...other props
-};
 
 export default CollapseArrow;

@@ -1,0 +1,41 @@
+.toggle {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+.json-display {
+  width: 40%;
+  padding: 10px;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.generate-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-container {
+  width: 40%;
+}

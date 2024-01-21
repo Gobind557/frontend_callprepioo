@@ -1,16 +1,15 @@
-import  { Fragment } from "react";
-import CollapseArrow from "./CollapseArrow"; // Assuming CollapseArrow is in the same directory
+import { Fragment } from "react";
+import CollapseArrow from "./CollapseArrow";
 
-const NEW_LINE = "\n";
-const ARRAY_BRACES = ["[", "]"];
-const OBJECT_BRACES = ["{", "}"];
 import {
-  isArrayWithValues,
-  isObjectWithKeys,
   indent,
+  NEW_LINE,
+  ARRAY_BRACES,
+  OBJECT_BRACES,
+} from "../utils/constants";
 
-} from "./utils";
-// Assuming these utility functions are defined elsewhere
+import isArrayWithValues from "../utils/isArrayWithValues";
+import isObjectWithKeys from "../utils/isObjectWithKeys";
 
 function JsonRenderer({ json, level = 1 }) {
   if (isArrayWithValues(json) || isObjectWithKeys(json)) {
@@ -43,10 +42,12 @@ function JsonObjectOrArray({ json, level }) {
         <Fragment key={i}>
           {indent(level)}
           {`${JSON.stringify(key)}: `}
+
           <JsonRenderer
             json={isArray ? json[Number(key)] : json[key]}
             level={level + 1}
           />
+
           {renderMaybeComma(key)}
           {NEW_LINE}
         </Fragment>
